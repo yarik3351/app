@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyInv</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= link_to "На главную", root_path %>
+  <%= link_to "Вход", login_path %>
+  <%= link_to "Выйти  ", logout_path %>
+  <%= @current_user.name %>
+  <%= yield %>
+  </body>
+</html>
