@@ -1,10 +1,10 @@
-<%= form_with(model: invoice, local: true) do |form| %>
-  <% if invoice.errors.any? %>
+<%= form_with(model: @invoice, local: true) do |form| %>
+  <% if @invoice.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
 
       <ul>
-        <% invoice.errors.full_messages.each do |message| %>
+        <% @invoice.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -12,49 +12,45 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.label :number %>
+    <%= form.text_field :number, id: :invoice_number %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+    <%= form.label :date %>
+    <%= form.date_field :date, id: :invoice_date %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :name_uk %>
-    <%= form.text_field :name_uk, id: :user_name_uk %>
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id, id: :customer_id %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :user_address %>
+    <%= form.label :status%>
+    <%= form.text_field :status, id: :status %>
   </div>
 
   <div class="field">
-    <%= form.label :address_uk %>
-    <%= form.text_field :address_uk, id: :user_address_uk %>
+    <%= form.label :amount%>
+    <%= form.text_field :amount, id: :amount%>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :user_phone %>
+    <%= form.label :currency %>
+    <%= form.text_field :currency, id: :currency%>
   </div>
 
   <div class="field">
-    <%= form.label :bank_credentials %>
-    <%= form.text_field :bank_credentials, id: :user_bank_credentials %>
+    <%= form.label :items %>
+    <%= form.text_field :items, id: :items%>
   </div>
 
-  <div class="field">
-    <%= form.label :admin %>
-    <%= form.check_box :admin %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "invoices#index"
-
+  
   resources :invoices
   resources :users
   get '/login' => 'sessions#login'
